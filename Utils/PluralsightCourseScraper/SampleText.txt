@@ -1,0 +1,9 @@
+﻿<Person>
+	<Name>Simon Cromwell</Name>
+	<Age>23</Age>
+</Person>
+
+{
+	"Name": "Simon Cromwell",
+	"Age": 23
+}
