@@ -1,6 +1,7 @@
 ﻿<Person>
 	<Name>Simon Cromwell</Name>
 	<Age>23</Age>
+	<Gender>Male</Gender>
 </Person>
 
 {
