@@ -1,8 +1,7 @@
 {
   "profiles": {
     "PluralsightCourseScraper": {
-      "commandName": "Project",
-      "commandLineArgs": "PluralsightProfile.html"
+      "commandName": "Project"
     }
   }
 }
