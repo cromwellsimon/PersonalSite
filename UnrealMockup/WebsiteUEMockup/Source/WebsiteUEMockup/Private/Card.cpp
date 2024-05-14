@@ -5,31 +5,40 @@
 #include "Components/TextBlock.h"
 #include "Components/Image.h"
 
-void UCard::Init(UTextBlock* inTextBlockRef, UImage* inImageRef)
+void UCard::Init(UTextBlock* inTitleTextBlockRef, UTextBlock* inSubtitleTextBlockRef, UImage* inImageRef)
 {
-	TextBlockRef = inTextBlockRef;
-	ImageRef = inImageRef;
+	_TitleTextBlockRef = inTitleTextBlockRef;
+	_SubtitleTextBlockRef = inSubtitleTextBlockRef;
+	_ImageRef = inImageRef;
 }
 
-void UCard::Constructor(const FText& inText, UTexture2D* inTexture)
+void UCard::Constructor(const FCardData& inCardData)
 {
-	SetText(inText);
-	SetTexture(inTexture);
+	_CardData = inCardData;
+	SetTitle(_CardData.Title);
+	SetSubtitle(_CardData.Subtitle);
+	SetTexture(_CardData.Texture);
 }
 
-void UCard::SetText(const FText& inText)
+void UCard::SetTitle(const FString& inTitle)
 {
-	_Text = inText;
-	TextBlockRef->SetText(inText);
+	_CardData.Title = inTitle;
+	_TitleTextBlockRef->SetText(FText::FromString(_CardData.Title));
 }
 
-const FText& UCard::GetText()
+const FString& UCard::GetTitle()
 {
-	return _Text;
+	return _CardData.Title;
+}
+
+void UCard::SetSubtitle(const FString& inSubtitle)
+{
+	_CardData.Subtitle = inSubtitle;
+	_SubtitleTextBlockRef->SetText(FText::FromString(_CardData.Subtitle));
 }
 
 void UCard::SetTexture(UTexture2D* inTexture)
 {
-	_Texture = inTexture;
-	ImageRef->SetBrushFromTexture(_Texture);
+	_CardData.Texture = inTexture;
+	_ImageRef->SetBrushFromTexture(_CardData.Texture);
 }

@@ -5,28 +5,20 @@
 #include "CoreMinimal.h"
 #include "Engine.h"
 #include "Engine/DataTable.h"
-#include "Course.generated.h"
+#include "CardData.h"
+#include "SectionCardData.generated.h"
 
 USTRUCT(BlueprintType)
-struct WEBSITEUEMOCKUP_API FCourse : public FTableRowBase
+struct WEBSITEUEMOCKUP_API FSectionCardData : public FTableRowBase
 {
 	GENERATED_USTRUCT_BODY()
 
 public:
 	UPROPERTY(BlueprintReadWrite)
-	FText Name;
+	FString SectionTitle;
 
 	UPROPERTY(BlueprintReadWrite)
-	FString Url;
+	TArray<FCardData> CardData;
 
-	UPROPERTY(BlueprintReadWrite)
-	FText Review;
-
-	UPROPERTY(BlueprintReadWrite)
-	FDateTime GeneralCompletionDate;
-
-	UPROPERTY(BlueprintReadWrite)
-	FString Notes;
-
-	FCourse(){}
+	FSectionCardData(){}
 };

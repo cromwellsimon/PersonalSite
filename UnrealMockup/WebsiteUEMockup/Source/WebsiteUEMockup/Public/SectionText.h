@@ -16,24 +16,24 @@ class WEBSITEUEMOCKUP_API USectionText : public UUserWidget
 	
 private:
 	UPROPERTY()
-	FText _Text;
+	FString _Text;
 
 protected:
 	UPROPERTY(BlueprintReadWrite)
-	class UTextBlock* TextBlockRef;
+	class UTextBlock* _TextBlockRef;
 
 	UFUNCTION(BlueprintCallable)
 	void Init(class UTextBlock* inTextBlockRef);
 
 public:
 	UFUNCTION(BlueprintCallable)
-	void Constructor(const FText& inText);
+	void Constructor(const FString& inText);
 
 	UFUNCTION(BlueprintCallable)
-	void SetText(const FText& inText);
+	void SetText(const FString& inText);
 
 	UFUNCTION(BlueprintCallable)
-	FText GetText();
+	FString GetText();
 
 	UFUNCTION(BlueprintCallable)
 	void SetSize(const float& inSize);

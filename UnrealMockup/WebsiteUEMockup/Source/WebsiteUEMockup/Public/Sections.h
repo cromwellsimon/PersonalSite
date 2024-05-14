@@ -16,36 +16,43 @@ class WEBSITEUEMOCKUP_API USections : public UUserWidget
 	
 private:
 	UPROPERTY()
-	TArray<FText> _Sections;
+	TArray<FString> _Sections;
 
 	UPROPERTY()
-	FText _ActiveSection;
+	FString _ActiveSection;
 
 	UPROPERTY()
 	float _VerticalPadding;
 
-protected:
-	UPROPERTY(BlueprintReadWrite)
-	class UVerticalBox* VerticalBoxRef;
+	UPROPERTY()
+	class UVerticalBox* _VerticalBoxRef;
 
-	UPROPERTY(BlueprintReadWrite)
-	TSubclassOf<UUserWidget> SectionTextClass;
+	UPROPERTY()
+	TSubclassOf<UUserWidget> _SectionTextClass;
+
+	UFUNCTION()
+	void ConstructSections(const TArray<FString>& inSections);
+
+protected:
 
 	UPROPERTY(BlueprintReadWrite)
 	float TextSize = 32;
 
 	UFUNCTION(BlueprintCallable)
-	void Init(class UVerticalBox* inVerticalBoxRef, TSubclassOf<UUserWidget> inSectionTextClass);
+	void Init(class UVerticalBox* inVerticalBoxRef, TSubclassOf<class USectionText> inSectionTextClass);
 
 public:
 	UFUNCTION(BlueprintCallable)
-	void Constructor(const TArray<FText>& inSections, const FText& inActiveSection, const float& inVerticalPadding);
+	void Constructor(const TArray<FString>& inSections, const FString& inActiveSection, const float& inVerticalPadding);
 
 	UFUNCTION(BlueprintCallable)
-	void SetSections(const TArray<FText>& inSections);
+	TArray<FString> GetSectionsToDisplay(const TArray<FString>& inSections, const FString& inActiveSection);
 
 	UFUNCTION(BlueprintCallable)
-	void SetActiveSection(const FText& inActiveSection);
+	void SetSections(const TArray<FString>& inSections);
+
+	UFUNCTION(BlueprintCallable)
+	void SetActiveSection(const FString& inActiveSection);
 
 	UFUNCTION(BlueprintCallable)
 	void SetMargin(const float& inVerticalPadding);

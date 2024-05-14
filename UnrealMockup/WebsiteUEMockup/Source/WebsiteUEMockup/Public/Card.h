@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "Blueprint/UserWidget.h"
+#include "CardData.h"
 #include "Card.generated.h"
 
 /**
@@ -16,30 +17,33 @@ class WEBSITEUEMOCKUP_API UCard : public UUserWidget
 	
 private:
 	UPROPERTY()
-	FText _Text;
+	FCardData _CardData;
 
 	UPROPERTY()
-	class UTexture2D* _Texture;
+	class UTextBlock* _TitleTextBlockRef;
+
+	UPROPERTY()
+	class UTextBlock* _SubtitleTextBlockRef;
+
+	UPROPERTY()
+	class UImage* _ImageRef;
 
 protected:
-	UPROPERTY(BlueprintReadWrite)
-	class UTextBlock* TextBlockRef;
-
-	UPROPERTY(BlueprintReadWrite)
-	class UImage* ImageRef;
-
 	UFUNCTION(BlueprintCallable)
-	void Init(class UTextBlock* inTextBlockRef, class UImage* inImageRef);
+	void Init(class UTextBlock* inTitleTextBlockRef, class UTextBlock* inSubtitleTextBlockRef, class UImage* inImageRef);
 
 public:
 	UFUNCTION(BlueprintCallable)
-	void Constructor(const FText& inText, UTexture2D* inTexture);
+	void Constructor(const FCardData& inCardData);
 
 	UFUNCTION(BlueprintCallable)
-	void SetText(const FText& inText);
+	void SetTitle(const FString& inTitle);
 
 	UFUNCTION(BlueprintCallable)
-	const FText& GetText();
+	const FString& GetTitle();
+
+	UFUNCTION(BlueprintCallable)
+	void SetSubtitle(const FString& inSubtitle);
 
 	UFUNCTION(BlueprintCallable)
 	void SetTexture(UTexture2D* inTexture);

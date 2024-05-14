@@ -7,36 +7,36 @@
 
 void USectionText::Init(UTextBlock* inTextBlockRef)
 {
-	TextBlockRef = inTextBlockRef;
+	_TextBlockRef = inTextBlockRef;
 }
 
-void USectionText::Constructor(const FText& inText)
+void USectionText::Constructor(const FString& inText)
 {
 	SetText(inText);
 }
 
-void USectionText::SetText(const FText& inText)
+void USectionText::SetText(const FString& inText)
 {
 	_Text = inText;
 	// In most circumstances, you'd want to put a nullptr check here.
 	// However, in this instance, TextBlock should have been set to something.
 	// If it hasn't been set to anything, I want it to fail to make it immediately obvious.
-	TextBlockRef->SetText(_Text);
+	_TextBlockRef->SetText(FText::FromString(_Text));
 }
 
-FText USectionText::GetText()
+FString USectionText::GetText()
 {
-	return TextBlockRef->GetText();
+	return _TextBlockRef->GetText().ToString();
 }
 
 void USectionText::SetSize(const float& inSize)
 {
-	FSlateFontInfo oldFont = TextBlockRef->GetFont();
+	FSlateFontInfo oldFont = _TextBlockRef->GetFont();
 	oldFont.Size = inSize;
-	TextBlockRef->SetFont(oldFont);
+	_TextBlockRef->SetFont(oldFont);
 }
 
 float USectionText::GetSize()
 {
-	return TextBlockRef->GetFont().Size;
+	return _TextBlockRef->GetFont().Size;
 }

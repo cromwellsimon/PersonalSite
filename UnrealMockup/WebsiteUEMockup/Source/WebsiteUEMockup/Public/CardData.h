@@ -5,28 +5,22 @@
 #include "CoreMinimal.h"
 #include "Engine.h"
 #include "Engine/DataTable.h"
-#include "Course.generated.h"
+#include "CardData.generated.h"
 
 USTRUCT(BlueprintType)
-struct WEBSITEUEMOCKUP_API FCourse : public FTableRowBase
+struct WEBSITEUEMOCKUP_API FCardData : public FTableRowBase
 {
 	GENERATED_USTRUCT_BODY()
 
 public:
 	UPROPERTY(BlueprintReadWrite)
-	FText Name;
+	UTexture2D* Texture;
 
 	UPROPERTY(BlueprintReadWrite)
-	FString Url;
+	FString Title;
 
 	UPROPERTY(BlueprintReadWrite)
-	FText Review;
+	FString Subtitle;
 
-	UPROPERTY(BlueprintReadWrite)
-	FDateTime GeneralCompletionDate;
-
-	UPROPERTY(BlueprintReadWrite)
-	FString Notes;
-
-	FCourse(){}
+	FCardData(){}
 };
