@@ -40,7 +40,7 @@ protected:
 
 public:
 	UPROPERTY(BlueprintReadWrite)
-	FVector2D SelectedCardPosition = FVector2D(150, 0);
+	FVector2D SelectedCardPosition = FVector2D(0, 0);
 
 	UPROPERTY(BlueprintReadWrite)
 	FVector2D CardSize = FVector2D(500, 400);

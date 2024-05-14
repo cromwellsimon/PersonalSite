@@ -38,7 +38,7 @@ void UCardRoulette::SetSelectedCard(int32 inSelectedCardIndex)
 	SelectedCard = Cast<UCard>(_CanvasPanelRef->GetChildAt(inSelectedCardIndex - 1));
 	if (SelectedCard == nullptr)
 	{
-		SetSelectedCard(1);
+		//SetSelectedCard(1);
 		return;
 	}
 	TArray<UWidget*> children = _CanvasPanelRef->GetAllChildren();

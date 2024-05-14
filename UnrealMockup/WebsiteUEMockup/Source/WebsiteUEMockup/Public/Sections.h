@@ -49,11 +49,5 @@ public:
 	TArray<FString> GetSectionsToDisplay(const TArray<FString>& inSections, const FString& inActiveSection);
 
 	UFUNCTION(BlueprintCallable)
-	void SetSections(const TArray<FString>& inSections);
-
-	UFUNCTION(BlueprintCallable)
-	void SetActiveSection(const FString& inActiveSection);
-
-	UFUNCTION(BlueprintCallable)
 	void SetMargin(const float& inVerticalPadding);
 };

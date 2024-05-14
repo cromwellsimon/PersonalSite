@@ -20,5 +20,8 @@ public:
 	UPROPERTY(BlueprintReadWrite)
 	TArray<FCardData> CardData;
 
+	UPROPERTY(BlueprintReadWrite)
+	int32 SelectedCardIndex = 1;
+
 	FSectionCardData(){}
 };
