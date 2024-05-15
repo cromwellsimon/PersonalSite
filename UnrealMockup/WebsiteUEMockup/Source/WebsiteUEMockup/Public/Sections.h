@@ -46,7 +46,7 @@ public:
 	void Constructor(const TArray<FString>& inSections, const FString& inActiveSection, const float& inVerticalPadding);
 
 	UFUNCTION(BlueprintCallable)
-	TArray<FString> GetSectionsToDisplay(const TArray<FString>& inSections, const FString& inActiveSection);
+	static TArray<FString> GetSectionsToDisplay(const TArray<FString>& inSections, const FString& inActiveSection);
 
 	UFUNCTION(BlueprintCallable)
 	void SetMargin(const float& inVerticalPadding);

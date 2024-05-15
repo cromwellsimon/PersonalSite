@@ -89,7 +89,7 @@ void UDashboard::MoveCard(bool rightwards)
 	else
 	{
 		activeCardIndex -= 1;
-		if (activeCardIndex < 0)
+		if (activeCardIndex < 1)
 		{
 			_SectionCardData[activeSectionIndex].SelectedCardIndex = _SectionCardData[activeSectionIndex].CardData.Num();
 		}
