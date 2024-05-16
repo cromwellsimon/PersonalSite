@@ -38,7 +38,10 @@ void UCardRoulette::SetSelectedCard(int32 inSelectedCardIndex)
 	SelectedCard = Cast<UCard>(_CanvasPanelRef->GetChildAt(inSelectedCardIndex - 1));
 	if (SelectedCard == nullptr)
 	{
-		//SetSelectedCard(1);
+		if (_CanvasPanelRef->GetChildAt(0) != nullptr)
+		{
+			SetSelectedCard(1);
+		}
 		return;
 	}
 	TArray<UWidget*> children = _CanvasPanelRef->GetAllChildren();
@@ -106,13 +109,4 @@ void UCardRoulette::Constructor(const TArray<FCardData>& inCardData, int32 inSel
 {
 	SetCardData(inCardData);
 	SetSelectedCard(inSelectedCardIndex);
-}
-
-void UCardRoulette::Test()
-{
-	for (UWidget* child : _CanvasPanelRef->GetAllChildren())
-	{
-		UCanvasPanelSlot* slot = Cast<UCanvasPanelSlot>(child->Slot);
-		UE_LOG(LogTemp, Warning, TEXT("Anchor == %f %f %f %f"), slot->GetAnchors().Minimum.X, slot->GetAnchors().Minimum.Y, slot->GetAnchors().Maximum.X, slot->GetAnchors().Maximum.Y);
-	}
 }

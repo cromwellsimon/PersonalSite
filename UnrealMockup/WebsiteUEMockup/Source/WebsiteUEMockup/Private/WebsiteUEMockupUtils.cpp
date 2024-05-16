@@ -2,27 +2,26 @@
 
 
 #include "WebsiteUEMockupUtils.h"
-#include <SectionCardDataAsset.h>
-#include <CardDataAsset.h>
+#include <CardData.h>
+#include <SectionCardData.h>
 
-TArray<USectionCardDataAsset*> UWebsiteUEMockupUtils::InstantiateSampleData()
+// This is what I mean whenever saying that I prefer making my data compile-time.
+// Changing the constructor function in any way and re-compiling causes errors which won't allow the game to start until all but doesn't result in any data loss.
+// I would prefer to be able to use the actual constructor because the syntax is a lot nicer-looking (it looks almost exactly like JSON) but this works as well
+TArray<FSectionCardData> UWebsiteUEMockupUtils::InstantiateSampleData()
 {
-	TArray<USectionCardDataAsset*> data;
-
-	TArray<UCardDataAsset*> section1cards;
-	section1cards.Add(UCardDataAsset::Instantiate(nullptr, TEXT("Section 1, Card 1"), TEXT("")));
-	section1cards.Add(UCardDataAsset::Instantiate(nullptr, TEXT("Section 1, Card 2"), TEXT("")));
-	data.Add(USectionCardDataAsset::Instantiate(TEXT("Section 1"), section1cards, 1));
-
-	TArray<UCardDataAsset*> section2cards;
-	section2cards.Add(UCardDataAsset::Instantiate(nullptr, TEXT("Section 2, Card 1"), TEXT("")));
-	data.Add(USectionCardDataAsset::Instantiate(TEXT("Section 2"), section2cards, 1));
-
-	TArray<UCardDataAsset*> section3cards;
-	section3cards.Add(UCardDataAsset::Instantiate(nullptr, TEXT("Section 3, Card 1"), TEXT("")));
-	section3cards.Add(UCardDataAsset::Instantiate(nullptr, TEXT("Section 3, Card 2"), TEXT("")));
-	section3cards.Add(UCardDataAsset::Instantiate(nullptr, TEXT("Section 3, Card 3"), TEXT("")));
-	data.Add(USectionCardDataAsset::Instantiate(TEXT("Section 3"), section3cards, 2));
-
-	return data;
+	return TArray<FSectionCardData> { 
+		FSectionCardData::Instantiate(TEXT("Section 1"), TArray<FCardData> {
+			FCardData::Instantiate(nullptr, TEXT("Section 1, Card 1"), TEXT("")),
+			FCardData::Instantiate(nullptr, TEXT("Section 1, Card 2"), TEXT("")),
+		}),
+		FSectionCardData::Instantiate(TEXT("Section 2"), TArray<FCardData> {
+			FCardData::Instantiate(nullptr, TEXT("Section 2, Card 1"), TEXT("")),
+		}),
+		FSectionCardData::Instantiate(TEXT("Section 3"), TArray<FCardData> {
+			FCardData::Instantiate(nullptr, TEXT("Section 3, Card 1"), TEXT("")),
+			FCardData::Instantiate(nullptr, TEXT("Section 3, Card 2"), TEXT("")),
+			FCardData::Instantiate(nullptr, TEXT("Section 3, Card 3"), TEXT("")),
+		})
+	};
 }

@@ -5,6 +5,7 @@
 #include "Components/VerticalBox.h"
 #include "Components/VerticalBoxSlot.h"
 #include <SectionText.h>
+#include "WebsiteUEMockupUtils.h"
 
 void USections::ConstructSections(const TArray<FString>& inSections)
 {
@@ -42,34 +43,9 @@ void USections::Constructor(const TArray<FString>& inSections, const FString& in
 {
 	if (_SectionTextClass != nullptr)
 	{
-		UE_LOG(LogTemp, Warning, TEXT("%d"), GetSectionsToDisplay(inSections, inActiveSection).Num());
-		ConstructSections(GetSectionsToDisplay(inSections, inActiveSection));
+		ConstructSections(UWebsiteUEMockupUtils::Roulette(inSections, inSections.IndexOfByKey(inActiveSection), 4, 0));
 		SetMargin(inVerticalPadding);
 	}
-}
-
-TArray<FString> USections::GetSectionsToDisplay(const TArray<FString>& inSections, const FString& inActiveSection)
-{
-	int32 indexOfActiveSection;
-	bool result = inSections.Find(inActiveSection, indexOfActiveSection);
-	TArray<FString> sectionsToDisplay;
-	if (result == false)
-	{
-		return sectionsToDisplay;
-	}
-	int32 index = indexOfActiveSection;
-	while (sectionsToDisplay.Num() < 5)
-	{
-		if (index < 0)
-		{
-			index = inSections.Num() - 1;
-			continue;
-		}
-		sectionsToDisplay.Add(inSections[index]);
-		index--;
-	}
-	Algo::Reverse(sectionsToDisplay);
-	return sectionsToDisplay;
 }
 
 void USections::SetMargin(const float& inVerticalPadding)

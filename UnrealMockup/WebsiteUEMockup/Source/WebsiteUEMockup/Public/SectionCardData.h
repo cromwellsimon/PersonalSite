@@ -24,4 +24,16 @@ public:
 	int32 SelectedCardIndex = 1;
 
 	FSectionCardData(){}
+
+	static FSectionCardData Instantiate(const FString& inSectionTitle, const TArray<FCardData>& inCardData, int32 inSelectedCardIndex = 1);
+};
+
+UCLASS()
+class WEBSITEUEMOCKUP_API USectionCardDataStatics : public UBlueprintFunctionLibrary
+{
+	GENERATED_BODY()
+
+public:
+	UFUNCTION(BlueprintCallable)
+	static FSectionCardData Instantiate(const FString& inSectionTitle, const TArray<FCardData>& inCardData, int32 inSelectedCardIndex = 1);
 };

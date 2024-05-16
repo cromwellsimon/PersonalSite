@@ -18,9 +18,9 @@ void UDashboard::Constructor(const TArray<FSectionCardData>& inSectionCardData, 
 
 	TArray<FString> sections;
 	bool activeSectionCardDataFound = false;
-	// Tried doing this with just a pointer but I kept getting access violation exceptions even though I was checking for a nullptr...
-	// I wonder if Unreal Engine macros prohibits passing structs as pointers?
-	// Also, whenever I tried doing this with a pointer instead, I kept getting CJK characters coming up in the text lol?
+	// Tried doing this with just a pointer but I sometimes got access violation exceptions even though I was checking for a nullptr...
+	// I wonder if Unreal Engine macros prohibits pointers to structs? I wouldn't imagine that'd be the case, but I don't know why I'd be having issues with it.
+	// Other times, I got random CJK characters sometimes in the text lol
 	FSectionCardData activeSectionCardData;
 	for (FSectionCardData sectionCardData : _SectionCardData)
 	{
@@ -73,17 +73,18 @@ void UDashboard::MoveSection(bool upwards)
 void UDashboard::MoveCard(bool rightwards)
 {
 	int32 activeSectionIndex = GetActiveSectionIndex();
-	int32 activeCardIndex = _SectionCardData[activeSectionIndex].SelectedCardIndex;
+	FSectionCardData sectionCardData = _SectionCardData[activeSectionIndex];
+	int32 activeCardIndex = sectionCardData.SelectedCardIndex;
 	if (rightwards)
 	{
 		activeCardIndex += 1;
-		if (activeCardIndex >= _SectionCardData[activeSectionIndex].CardData.Num() + 1)
+		if (activeCardIndex >= sectionCardData.CardData.Num() + 1)
 		{
-			_SectionCardData[activeSectionIndex].SelectedCardIndex = 1;
+			sectionCardData.SelectedCardIndex = 1;
 		}
 		else
 		{
-			_SectionCardData[activeSectionIndex].SelectedCardIndex = activeCardIndex;
+			sectionCardData.SelectedCardIndex = activeCardIndex;
 		}
 	}
 	else
@@ -91,13 +92,13 @@ void UDashboard::MoveCard(bool rightwards)
 		activeCardIndex -= 1;
 		if (activeCardIndex < 1)
 		{
-			_SectionCardData[activeSectionIndex].SelectedCardIndex = _SectionCardData[activeSectionIndex].CardData.Num();
+			sectionCardData.SelectedCardIndex = sectionCardData.CardData.Num();
 		}
 		else
 		{
-			_SectionCardData[activeSectionIndex].SelectedCardIndex = activeCardIndex;
+			sectionCardData.SelectedCardIndex = activeCardIndex;
 		}
 	}
 
-	Constructor(_SectionCardData, _SectionCardData[activeSectionIndex].SectionTitle);
+	Constructor(_SectionCardData, sectionCardData.SectionTitle);
 }

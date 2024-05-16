@@ -56,7 +56,4 @@ public:
 
 	UFUNCTION(BlueprintCallable)
 	void Constructor(const TArray<FCardData>& inCardData, int32 inSelectedCardIndex);
-
-	UFUNCTION(BlueprintCallable)
-	void Test();
 };
