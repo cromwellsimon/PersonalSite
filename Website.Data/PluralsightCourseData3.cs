@@ -7,7 +7,7 @@ namespace Website.Data;
 
 public static class PluralsightCourseData3
 {
-    // Is making an ImmutableArray readonly redundant?
+    // Is making an ImmutableArray readonly redundant? Idk lol
     public static readonly Lazy<ImmutableArray<Course>> Courses = new(() => new()
     {
     });

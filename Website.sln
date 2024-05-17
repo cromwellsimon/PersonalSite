@@ -5,12 +5,14 @@ VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Website", "Website\Website.csproj", "{19767723-628D-48A8-BDD8-7AE2B979C6A6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Website.Shared", "Website.Shared\Website.Shared.csproj", "{AE94736C-9FFB-450F-938F-E282237E5735}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Website.Shared", "Website.Shared\Website.Shared.csproj", "{AE94736C-9FFB-450F-938F-E282237E5735}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Website.Data", "Website.Data\Website.Data.csproj", "{759AFF8E-0802-403A-9806-01C0A4E194F4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Website.Data", "Website.Data\Website.Data.csproj", "{759AFF8E-0802-403A-9806-01C0A4E194F4}"
 	ProjectSection(ProjectDependencies) = postProject
 		{AE94736C-9FFB-450F-938F-E282237E5735} = {AE94736C-9FFB-450F-938F-E282237E5735}
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Website.Tests", "Website.Tests\Website.Tests.csproj", "{D540B38C-D748-436C-9BFE-86AB2CB1B3E2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -30,6 +32,10 @@ Global
 		{759AFF8E-0802-403A-9806-01C0A4E194F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{759AFF8E-0802-403A-9806-01C0A4E194F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{759AFF8E-0802-403A-9806-01C0A4E194F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D540B38C-D748-436C-9BFE-86AB2CB1B3E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D540B38C-D748-436C-9BFE-86AB2CB1B3E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D540B38C-D748-436C-9BFE-86AB2CB1B3E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D540B38C-D748-436C-9BFE-86AB2CB1B3E2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
