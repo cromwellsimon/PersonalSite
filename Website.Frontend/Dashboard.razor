@@ -1,0 +1,6 @@
+﻿<div class="content" @ref=contentDiv @onkeydown=Test tabindex="0">
+	@foreach (Shared.SectionAndStyle section in Data.GetSectionsToDisplay().Reverse())
+	{
+		<p>@(section.Section.Name.Value)</p>
+	}
+</div>

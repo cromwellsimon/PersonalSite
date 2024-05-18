@@ -1,0 +1,12 @@
+﻿<div class="background">
+	<div class="content">
+		@if (ChildContent != null)
+		{
+			<div class="child-content">
+				@ChildContent
+			</div>
+		}
+		<p class="title" style="font-size: @TextSize">@Data.Title</p>
+		<p class="subtitle" style="font-size: @TextSize">@Data.Subtitle</p>
+	</div>
+</div>

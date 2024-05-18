@@ -5,7 +5,7 @@ using static System.Collections.Specialized.BitVector32;
 
 namespace Website.Shared;
 
-public readonly record struct SectionName(string Name)
+public readonly record struct SectionName(string Value)
 {
     public static implicit operator SectionName(string inString) => new(inString);
 }
