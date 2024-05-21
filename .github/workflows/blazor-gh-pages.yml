@@ -34,9 +34,11 @@ jobs:
 
     - name: Commit to GitHub pages Repo
       if: success()
-      uses: crazy-max/ghaction-github-pages@v1.5.1
+      # You may pin to the exact commit or the version.
+      # uses: crazy-max/ghaction-github-pages@c05ee637ec73429400a359430db8e5629f3f2564
+      uses: crazy-max/ghaction-github-pages@v4.0.0
       with:
-        target_branch: gh-pages
+        # Build directory to deploy
         build_dir: ${{ env.PUBLISH_DIR }}
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+        
