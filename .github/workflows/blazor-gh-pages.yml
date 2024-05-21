@@ -40,5 +40,7 @@ jobs:
       with:
         # Build directory to deploy
         build_dir: ${{ env.PUBLISH_DIR }}
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
         
