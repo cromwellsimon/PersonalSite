@@ -30,8 +30,6 @@ jobs:
         uses: actions/checkout@v4
       - name: Setup Pages
         uses: actions/configure-pages@v5
-      - name: Setup .NET
-        uses: actions/setup-dotnet@v4
       - name: GitHub Pages Blazor WASM
         # You may pin to the exact commit or the version.
         # uses: na1307/blazor-github-pages@0a8bcd8cafd41d1e5d69da859a20363b97f56f86
@@ -47,6 +45,9 @@ jobs:
           fix-404: true
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
+        with:
+          path: _out/wwwroot/
+          
 
   # Deployment job
   deploy:
