@@ -3,7 +3,7 @@
 # Another difference is that it publishes the changes to a gh-pages branch. This is what I'm used to doing but I wanted to try sourcing it purely from GitHub Actions instead, however it seems to potentially be somewhat problematic?
 name: Deploy Blazor WASM to GitHub Page
 env:
-  PUBLISH_DIR: bin/Release/net8.0/publish/wwwroot
+  PUBLISH_DIR: ${{ github.event.repository.name }}/bin/Release/net8.0/publish/wwwroot
 
 # Controls when the action will run
 on:
@@ -17,7 +17,7 @@ jobs:
     - uses: actions/checkout@v2
 
     - name: Publish application
-      run: dotnet publish -c Release
+      run: dotnet publish -c Release ${{ github.event.repository.name }}/${{ github.event.repository.name }}.csproj
 
       # base href url value should be changed so that resources like CSS and scripts can load properly. 
     - name: Rewrite base href
