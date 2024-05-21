@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121.
+-->
+<Project>
+  <PropertyGroup>
+    <_PublishTargetUrl>D:\Work\Projects\Portfolio\Website\Website\bin\Release\net8.0\browser-wasm\publish\</_PublishTargetUrl>
+    <History>True|2024-05-21T07:33:51.2943048Z;False|2024-05-21T03:33:21.5190179-04:00;False|2024-05-21T03:32:50.8209217-04:00;True|2024-05-21T03:09:59.6940222-04:00;False|2024-05-21T03:05:44.9669997-04:00;False|2024-05-21T03:01:13.0343392-04:00;False|2024-05-21T02:52:12.6878606-04:00;False|2024-05-21T02:51:54.3180814-04:00;False|2024-05-21T02:49:44.7420733-04:00;False|2024-05-21T02:49:17.5136622-04:00;False|2024-05-21T02:48:55.1836708-04:00;True|2024-05-21T02:25:18.3388509-04:00;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+</Project>

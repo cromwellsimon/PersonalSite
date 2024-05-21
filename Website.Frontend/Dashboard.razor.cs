@@ -14,7 +14,6 @@ public partial class Dashboard : ComponentBase
 	[Parameter] public required Shared.Dashboard DashboardData { get; set; }
 
     private ElementReference contentDiv;
-    private CardCarousel? cardCarousel;
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
