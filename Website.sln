@@ -14,7 +14,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Website.Data", "Website.Dat
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Website.Tests", "Website.Tests\Website.Tests.csproj", "{D540B38C-D748-436C-9BFE-86AB2CB1B3E2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Website.Frontend", "Website.Frontend\Website.Frontend.csproj", "{6E5B942B-7A7E-44E9-AB2F-7005BDC04CAB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Website.Frontend", "Website.Frontend\Website.Frontend.csproj", "{6E5B942B-7A7E-44E9-AB2F-7005BDC04CAB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

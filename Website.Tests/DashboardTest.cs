@@ -119,7 +119,7 @@ public class DashboardTest
     {
         Dashboard dashboard = GetSampleDashboard();
         SectionAndStyle[] sections = dashboard.GetSectionsToDisplay();
-        Assert.Equal(new List<int> { 32, 30, 28, 26, 24 }, sections.Select((section) => section.FontSize));
+        Assert.Equal(new List<float> { 1, 0.95f, 0.9f, 0.85f, 0.8f }, sections.Select((section) => float.Round(section.Ems, 2)));
         Assert.Equal(new List<float> { 1.0f, 0.8f, 0.6f, 0.4f, 0.2f }, sections.Select((section) => float.Round(section.Opacity, 1)));
         Assert.Equal(new List<Section> { dashboard[1]!, dashboard[0]!, dashboard[2]!, dashboard[1]!, dashboard[0]! }, sections.Select((section) => section.Section));
     }

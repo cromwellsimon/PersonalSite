@@ -86,27 +86,27 @@ public static class DashboardStatics
 
     public static SectionAndStyle[] GetSectionsToDisplay(this Dashboard inDashboard, int numberOfSections = 5)
     {
-        int fontSize = 32;
+        float ems = 1.0f;
         float opacity = 1.0f;
-        SectionAndStyle[] sectionStyles = new SectionAndStyle[numberOfSections];
+        SectionAndStyle[] sectionAndStyles = new SectionAndStyle[numberOfSections];
         Section[] sections = inDashboard.Sections.Rotate(inDashboard.SelectedSectionIndex, -1).Take(numberOfSections - 1).ToArray();
-        sectionStyles[0] = new()
+        sectionAndStyles[0] = new()
         {
             Section = inDashboard.SelectedSection!,
-            FontSize = fontSize,
+            Ems = ems,
             Opacity = opacity
         };
         for (int i = 0; i < sections.Length; i++)
         {
-            fontSize -= 2;
+            ems -= 0.05f;
             opacity -= 1.0f / numberOfSections;
-            sectionStyles[i + 1] = new()
+            sectionAndStyles[i + 1] = new()
             {
                 Section = sections[i],
-                FontSize = fontSize,
+                Ems = ems,
                 Opacity = opacity
             };
         }
-        return sectionStyles;
+        return sectionAndStyles;
     }
 }

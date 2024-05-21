@@ -1,0 +1,13 @@
+﻿.content {
+}
+
+.carousel {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    white-space: nowrap;
+    margin-left: 1em;
+    perspective: 500px;
+    perspective-origin: left;
+}

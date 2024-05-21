@@ -23,5 +23,6 @@ public record Card
             Subtitle = inSubtitle;
         }
     }
-
 }
+
+public readonly record struct CardAndStyle(Card Card, float XPosition, float ZPosition, int ZIndex);

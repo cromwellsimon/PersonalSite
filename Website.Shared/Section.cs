@@ -70,7 +70,7 @@ public class Section
     }
 }
 
-public readonly record struct SectionAndStyle(Section Section, float Opacity, int FontSize);
+public readonly record struct SectionAndStyle(Section Section, float Opacity, float Ems);
 
 public static class SectionStatics
 {
@@ -99,7 +99,7 @@ public static class SectionStatics
     }
 
     // This function won't actually be necessary for what I'm doing since I only need it my sections to ever go backwards
-    public static IEnumerable<T> Roulette<T>(this IList<T> inList, int inStartingPosition, int inBackwardPadding, int inForwardPadding)
+    public static IEnumerable<T> Carousel<T>(this IList<T> inList, int inStartingPosition, int inBackwardPadding, int inForwardPadding)
     {
         foreach (T element in inList.Rotate(inStartingPosition, -1).Take(inBackwardPadding).Reverse())
         {
@@ -135,5 +135,19 @@ public static class SectionStatics
             return null;
         }
         return inSection.Cards[Math.Clamp(inSection.SelectedCardIndex + 1, 0, inSection.Cards.Count - 1)];
+    }
+
+    public static CardAndStyle[] GetCardsToDisplay(this Section inSection)
+    {
+        CardAndStyle[] cardAndStyles = new CardAndStyle[inSection.Cards.Count];
+        for (int i = 0; i < cardAndStyles.Length; i++)
+        {
+            // 600px is the size of the card and 30px is how much margin-right each card has
+            float xPosition = inSection.SelectedCardIndex * -(600f + 30f);
+            // After fiddling around with this, 1.55 seemed to be a pretty good number
+            float zPosition = i + 1 > inSection.SelectedCardIndex ? -MathF.Pow(1.55f, i - inSection.SelectedCardIndex) : 20f;
+            cardAndStyles[i] = new(inSection.Cards[i], xPosition, zPosition, -i);
+        }
+        return cardAndStyles;
     }
 }
