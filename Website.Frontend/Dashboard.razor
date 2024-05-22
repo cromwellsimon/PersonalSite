@@ -1,9 +1,11 @@
-﻿<div class="content" @ref=contentDiv @onkeydown=OnInput tabindex="0">
-	@foreach (Shared.SectionAndStyle section in DashboardData.GetSectionsToDisplay().Reverse())
-	{
-		<p style="opacity: @(section.Opacity); font-size: @(section.Ems)em;">
-			@(section.Section.Name.Value)
-		</p>
-	}
-	<DashboardCardCarousel Section=@DashboardData.SelectedSection />
+﻿<div class="background">
+	<div class="content" @ref=contentDiv @onkeydown=OnInput tabindex="0">
+		@foreach (Shared.SectionAndStyle section in DashboardData.GetSectionsToDisplay().Reverse())
+		{
+			<p class="section-name" style="opacity: @(section.Opacity); font-size: @(section.Ems)em;">
+				@(section.Section.Name.Value)
+			</p>
+		}
+		<DashboardCardCarousel Section=@DashboardData.SelectedSection />
+	</div>
 </div>

@@ -7,7 +7,16 @@
     flex-wrap: nowrap;
     overflow: hidden;
     white-space: nowrap;
-    margin-left: 1em;
     perspective: 500px;
     perspective-origin: left;
+}
+
+.section-test {
+    margin-top: 1em;
+    color: white;
+}
+
+.count {
+    color: lightgray;
+    font-size: 0.75em;
 }

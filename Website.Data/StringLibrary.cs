@@ -37,6 +37,7 @@ public static class StringLibrary
     public static class Projects
     {
         public const string PtForPc = "P.T. for P.C.";
+        public const string LaRueCountyTreasuryWebsite = "LaRue County Treasury Website";
         public const string ElevatorUnity = "Elevator: Unity";
         public const string PolkerGame = "Polker.Game";
         public const string DarkDeception = "Dark Deception";
@@ -55,5 +56,17 @@ public static class StringLibrary
         public const string Pluralsight = nameof(Pluralsight);
         public const string Udemy = nameof(Udemy);
         public const string GameDevTv = "GameDev.tv";
+    }
+
+    public static class SkillCategories
+    {
+        public const string ProgrammingLanguages = "Programming Languages";
+        public const string GameDevelopmentTools = "Game Development Tools";
+        public const string WebFrontend = "Web Frontend";
+        public const string Backend = nameof(Backend);
+        public const string Cloud = nameof(Cloud);
+        public const string Database = nameof(Database);
+        public const string DevOps = nameof(DevOps);
+        public const string Other = nameof(Other);
     }
 }
