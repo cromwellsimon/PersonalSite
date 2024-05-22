@@ -9,63 +9,64 @@
             {
                 Sections =
                 {
-                    new() 
+                    new()
                     {
-                        Name = "Section 1",
+                        Name = StringLibrary.Sections.Other,
                         Cards = 
                         {
-                            new() { Title = "Card 1" },
-                            new() { Title = "Card 2" },
-                            new() { Title = "Card 3" },
+                            new() { Title = "test" },
                         }
                     },
                     new()
                     {
-                        Name = "Section 2",
+                        Name = StringLibrary.Sections.Courses,
+                        Cards = 
+                        {
+                            new() { Title = StringLibrary.CourseSites.Pluralsight },
+                            new() { Title = StringLibrary.CourseSites.Udemy },
+                            new() { Title = StringLibrary.CourseSites.GameDevTv },
+                        }
+                    },
+                    new()
+                    {
+                        Name = StringLibrary.Sections.Projects,
                         Cards =
                         {
-                            new() { Title = "Card 1" },
-                            new() { Title = "Card 2" }
-                        }
-                    },
-                    new()
-                    {
-                        Name = "Section 3",
-                        Cards = 
-                        {
-                            new() { Title = "Card 1" }
-                        }
-                    },
-                    new()
-                    {
-                        Name = "Section 4",
-                        Cards = 
-                        {
-                            new() { Title = "Card 1", Subtitle = "Subtitle 1" },
-                            new() { Title = "Card 2" },
-                            new() { Title = "Card 3" },
-                            new() { Title = "Card 4" },
-                            new() { Title = "Card 5" },
-                            new() { Title = "Card 6" },
-                            new() { Title = "Card 7" },
-                            new() { Title = "Card 8" },
-                            new() { Title = "Card 9" },
-                            new() { Title = "Card 10" },
+                            new() { Title = StringLibrary.Projects.PtForPc, Subtitle = StringLibrary.Companies.Independent },
+                            new() { Title = StringLibrary.Projects.ElevatorUnity, Subtitle = StringLibrary.Companies.Independent },
+                            new() { Title = StringLibrary.Projects.PolkerGame, Subtitle = StringLibrary.Companies.Polker },
+                            new() { Title = StringLibrary.Projects.DarkDeception, Subtitle = StringLibrary.Companies.GlowstickEntertainment },
+                            new() { Title = StringLibrary.Projects.MonstersAndMortals, Subtitle = StringLibrary.Companies.GlowstickEntertainment },
+                            new() { Title = StringLibrary.Projects.GdSuite, Subtitle = StringLibrary.Companies.Independent },
+                            new() { Title = StringLibrary.Projects.CommissionSystem, Subtitle = StringLibrary.Companies.ElectricityGuruAndInternetGuru },
+                            new() { Title = StringLibrary.Projects.SilentHillRemake, Subtitle = StringLibrary.Companies.Independent },
+                            new() { Title = StringLibrary.Projects.UniversalControlMacros, Subtitle = StringLibrary.Companies.LaRueCountyBand },
+                            new() { Title = StringLibrary.Projects.CtCore, Subtitle = StringLibrary.Companies.CromwellTechnology },
+                            new() { Title = StringLibrary.Projects.CaravanPositioner, Subtitle = StringLibrary.Companies.Independent },
+                            new() { Title = StringLibrary.Projects.Website, Subtitle = StringLibrary.Companies.Independent },
                         }
                     },
                     new() 
                     {
-                        Name = "Section 5",
+                        Name = StringLibrary.Sections.ProfessionalExperience,
                         Cards = 
                         {
-                            new() { Title = "Card 1" },
-                            new() { Title = "Card 2" },
-                            new() { Title = "Card 3" },
-                            new() { Title = "Card 4" },
+                            new() { Title = StringLibrary.JobTitles.SoftwareEngineer, Subtitle = StringLibrary.Companies.GlowstickEntertainment },
+                            new() { Title = StringLibrary.JobTitles.FullStackDeveloper, Subtitle = StringLibrary.Companies.Polker },
+                            new() { Title = StringLibrary.JobTitles.FullStackDeveloper, Subtitle = StringLibrary.Companies.ElectricityGuruAndInternetGuru },
+                            new() { Title = StringLibrary.JobTitles.FullStackDeveloper, Subtitle = StringLibrary.Companies.CromwellTechnology },
+                        }
+                    },
+                    new()
+                    {
+                        Name = StringLibrary.Sections.Skills,
+                        Cards = 
+                        {
+                            new() { Title = "test" },
                         }
                     },
                 },
-                SelectedSectionIndex = 3,
+                SelectedSectionIndex = 4,
             }) />
 @*    </Found>
     <NotFound>

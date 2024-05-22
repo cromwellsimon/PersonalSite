@@ -13,7 +13,7 @@ public readonly record struct SectionName(string Value)
 public class Section
 {
     public required SectionName Name { get; init; }
-    public List<Card> Cards { get; init; } = new();
+    public List<DashboardCard> Cards { get; init; } = new();
 
     private int selectedCardIndex = 0;
     public int SelectedCardIndex
@@ -22,7 +22,7 @@ public class Section
         set => selectedCardIndex = Math.Clamp(value, 0, Cards.Count - 1);
     }
 
-    public Card? SelectedCard
+    public DashboardCard? SelectedCard
     {
         get
         {
@@ -37,7 +37,7 @@ public class Section
         }
     }
 
-    public Card? Left()
+    public DashboardCard? Left()
     {
         if (Cards.Count == 0)
         {
@@ -47,7 +47,7 @@ public class Section
         return Cards[SelectedCardIndex];
     }
 
-    public Card? Right()
+    public DashboardCard? Right()
     {
         if (Cards.Count == 0)
         {
@@ -57,7 +57,7 @@ public class Section
         return Cards[SelectedCardIndex];
     }
 
-    public Card? this[int key]
+    public DashboardCard? this[int key]
     {
         get => Cards[key];
         set
@@ -119,7 +119,7 @@ public static class SectionStatics
         return $"{inSection.SelectedCardIndex + 1} of {inSection.Cards.Count}";
     }
 
-    public static Card? PeekLeft(this Section inSection)
+    public static DashboardCard? PeekLeft(this Section inSection)
     {
         if (inSection.Cards.Count == 0 || inSection.SelectedCardIndex - 1 < 0)
         {
@@ -128,7 +128,7 @@ public static class SectionStatics
         return inSection.Cards[Math.Clamp(inSection.SelectedCardIndex - 1, 0, inSection.Cards.Count - 1)];
     }
 
-    public static Card? PeekRight(this Section inSection)
+    public static DashboardCard? PeekRight(this Section inSection)
     {
         if (inSection.Cards.Count == 0 || inSection.SelectedCardIndex + 1 >= inSection.Cards.Count)
         {
@@ -137,9 +137,9 @@ public static class SectionStatics
         return inSection.Cards[Math.Clamp(inSection.SelectedCardIndex + 1, 0, inSection.Cards.Count - 1)];
     }
 
-    public static CardAndStyle[] GetCardsToDisplay(this Section inSection)
+    public static DashboardCardAndStyle[] GetCardsToDisplay(this Section inSection)
     {
-        CardAndStyle[] cardAndStyles = new CardAndStyle[inSection.Cards.Count];
+        DashboardCardAndStyle[] cardAndStyles = new DashboardCardAndStyle[inSection.Cards.Count];
         for (int i = 0; i < cardAndStyles.Length; i++)
         {
             // 600px is the size of the card and 30px is how much margin-right each card has

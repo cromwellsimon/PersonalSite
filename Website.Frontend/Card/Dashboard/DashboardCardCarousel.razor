@@ -1,11 +1,11 @@
 ﻿<div class="content">
 	<div class="carousel">
-		@foreach (Shared.CardAndStyle cardAndStyle in Section.GetCardsToDisplay())
+		@foreach (Shared.DashboardCardAndStyle cardAndStyle in Section.GetCardsToDisplay())
 		{
 			<div style="transform: translateX(@(cardAndStyle.XPosition)px) translateZ(@(cardAndStyle.ZPosition)em); z-index: @cardAndStyle.ZIndex; margin-right: 30px;" >
-				<Card CardData=@cardAndStyle.Card>
+				<DashboardCard CardData=@cardAndStyle.Card>
 
-				</Card>
+				</DashboardCard>
 			</div>
 		}
 	</div>

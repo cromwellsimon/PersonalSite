@@ -19,4 +19,8 @@
     <ProjectReference Include="..\Website.Shared\Website.Shared.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Card\Detail\" />
+  </ItemGroup>
+
 </Project>
