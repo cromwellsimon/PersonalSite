@@ -22,7 +22,7 @@ public class DashboardTest
                 new()
                 {
                     Name = "Section 1",
-                    Cards =
+                    DashboardCards =
                     {
                         new() { Title = "Card 1" },
                         new() { Title = "Card 2" },
@@ -31,7 +31,7 @@ public class DashboardTest
                 new()
                 {
                     Name = "Section 2",
-                    Cards =
+                    DashboardCards =
                     {
                         new() { Title = "Card 1" },
                     }
@@ -39,7 +39,7 @@ public class DashboardTest
                 new()
                 {
                     Name = "Section 3",
-                    Cards =
+                    DashboardCards =
                     {
                         new() { Title = "Card 1" },
                         new() { Title = "Card 2" },

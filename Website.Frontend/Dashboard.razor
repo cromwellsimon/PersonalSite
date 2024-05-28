@@ -1,11 +1,23 @@
 ﻿<div class="background">
 	<div class="content" @ref=contentDiv @onkeydown=OnInput tabindex="0">
-		@foreach (Shared.SectionAndStyle section in DashboardData.GetSectionsToDisplay().Reverse())
+		@if (DashboardData.SelectedSection!.SelectedCard!.SelectedDetailCard != null)
 		{
-			<p class="section-name" style="opacity: @(section.Opacity); font-size: @(section.Ems)em;">
-				@(section.Section.Name.Value)
-			</p>
+			@DashboardData.SelectedSection!.SelectedCard.SelectedDetailCard.RenderFragment
 		}
-		<DashboardCardCarousel Section=@DashboardData.SelectedSection />
+		else
+		{
+			@foreach (Shared.SectionAndStyle section in DashboardData.GetSectionsToDisplay().Reverse())
+			{
+				<p class="section-name" style="opacity: @(section.Opacity); font-size: @(section.Ems)em;">
+					@(section.Section.Name.Value)
+				</p>
+			}
+			<DashboardCardCarousel Section=@DashboardData.SelectedSection />
+		}
+		<div class="controls">
+			<p> Arrow Keys: Navigate </p>
+			<p> Enter: Detail </p>
+			<p>	Backspace: Return </p>
+		</div>
 	</div>
 </div>

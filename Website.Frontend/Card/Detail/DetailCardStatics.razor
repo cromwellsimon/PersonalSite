@@ -1,0 +1,33 @@
+﻿@code
+{
+	public class TextCard : Shared.Cards.Detail.TextCard
+	{
+		public override RenderFragment RenderFragment
+		{
+			get
+			{
+				return @<p> @Title + @Content </p>;
+			}
+		}
+
+		public TextCard() : base() { }
+		public TextCard(string inTitle, string inContent) : base(inTitle, inContent) { }
+	}
+
+	public static RenderFragment? Render(IDetailCard inDetailCard) => inDetailCard switch
+	{
+		// I didn't think I needed to but I need to do this which is a little unfortunate.
+		// I thought that method overloading would be able to match a TextCard in an IDetailCard variable with the TextCard overload,
+		// but it seems as if that is actually not the case and something like this must be done instead...
+		// Not ideal but also not the end of the world.
+		// I've been contemplating having a RenderFragment? on the IDetailCard but then I can't necessarily override that like I'd want to.
+		// The above solution works but is definitely a little verbose. Something like this is ideal but it not choosing the right function is definitely a deal-breaker
+		TextCard textCard => Render(textCard),
+		_ => null
+	};
+
+	public static RenderFragment Render(TextCard inTextCard)
+	{
+		return @<p> @inTextCard.Title + @inTextCard.Content </p>;
+	}
+}

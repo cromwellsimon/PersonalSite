@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Website.Shared.Cards;
 using static System.Collections.Specialized.BitVector32;
 
 namespace Website.Shared;
@@ -13,58 +14,58 @@ public readonly record struct SectionName(string Value)
 public class Section
 {
     public required SectionName Name { get; init; }
-    public List<DashboardCard> Cards { get; init; } = new();
+    public List<DashboardCard> DashboardCards { get; init; } = new();
 
     private int selectedCardIndex = 0;
     public int SelectedCardIndex
     {
         get => selectedCardIndex;
-        set => selectedCardIndex = Math.Clamp(value, 0, Cards.Count - 1);
+        set => selectedCardIndex = Math.Clamp(value, 0, DashboardCards.Count - 1);
     }
 
     public DashboardCard? SelectedCard
     {
         get
         {
-            if (Cards.Count == 0)
+            if (DashboardCards.Count == 0)
             {
                 return null;
             }
             else
             {
-                return Cards[SelectedCardIndex];
+                return DashboardCards[SelectedCardIndex];
             }
         }
     }
 
     public DashboardCard? Left()
     {
-        if (Cards.Count == 0)
+        if (DashboardCards.Count == 0)
         {
             return null;
         }
         SelectedCardIndex -= 1;
-        return Cards[SelectedCardIndex];
+        return DashboardCards[SelectedCardIndex];
     }
 
     public DashboardCard? Right()
     {
-        if (Cards.Count == 0)
+        if (DashboardCards.Count == 0)
         {
             return null;
         }
         SelectedCardIndex += 1;
-        return Cards[SelectedCardIndex];
+        return DashboardCards[SelectedCardIndex];
     }
 
     public DashboardCard? this[int key]
     {
-        get => Cards[key];
+        get => DashboardCards[key];
         set
         {
             if (value != null)
             {
-                Cards[key] = value;
+                DashboardCards[key] = value;
             }
         }
     }
@@ -116,37 +117,37 @@ public static class SectionStatics
 
     public static string GetCountText(this Section inSection)
     {
-        return $"{inSection.SelectedCardIndex + 1} of {inSection.Cards.Count}";
+        return $"{inSection.SelectedCardIndex + 1} of {inSection.DashboardCards.Count}";
     }
 
     public static DashboardCard? PeekLeft(this Section inSection)
     {
-        if (inSection.Cards.Count == 0 || inSection.SelectedCardIndex - 1 < 0)
+        if (inSection.DashboardCards.Count == 0 || inSection.SelectedCardIndex - 1 < 0)
         {
             return null;
         }
-        return inSection.Cards[Math.Clamp(inSection.SelectedCardIndex - 1, 0, inSection.Cards.Count - 1)];
+        return inSection.DashboardCards[Math.Clamp(inSection.SelectedCardIndex - 1, 0, inSection.DashboardCards.Count - 1)];
     }
 
     public static DashboardCard? PeekRight(this Section inSection)
     {
-        if (inSection.Cards.Count == 0 || inSection.SelectedCardIndex + 1 >= inSection.Cards.Count)
+        if (inSection.DashboardCards.Count == 0 || inSection.SelectedCardIndex + 1 >= inSection.DashboardCards.Count)
         {
             return null;
         }
-        return inSection.Cards[Math.Clamp(inSection.SelectedCardIndex + 1, 0, inSection.Cards.Count - 1)];
+        return inSection.DashboardCards[Math.Clamp(inSection.SelectedCardIndex + 1, 0, inSection.DashboardCards.Count - 1)];
     }
 
     public static DashboardCardAndStyle[] GetCardsToDisplay(this Section inSection)
     {
-        DashboardCardAndStyle[] cardAndStyles = new DashboardCardAndStyle[inSection.Cards.Count];
+        DashboardCardAndStyle[] cardAndStyles = new DashboardCardAndStyle[inSection.DashboardCards.Count];
         for (int i = 0; i < cardAndStyles.Length; i++)
         {
             // 600px is the size of the card and 30px is how much margin-right each card has
             float xPosition = inSection.SelectedCardIndex * -(600f + 30f);
             // After fiddling around with this, 1.55 seemed to be a pretty good number
             float zPosition = i + 1 > inSection.SelectedCardIndex ? -MathF.Pow(1.55f, i - inSection.SelectedCardIndex) : 20f;
-            cardAndStyles[i] = new(inSection.Cards[i], xPosition, zPosition, -i);
+            cardAndStyles[i] = new(inSection.DashboardCards[i], xPosition, zPosition, -i);
         }
         return cardAndStyles;
     }

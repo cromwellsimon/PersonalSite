@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Website.Shared;
+namespace Website.Shared.Cards.Detail;
 
-public record DetailCard
+public interface IDetailCard
 {
-    public Func<RenderFragment>? Content { get; init; }
+	public RenderFragment? RenderFragment { get; }
 }

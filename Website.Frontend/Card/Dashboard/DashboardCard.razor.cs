@@ -11,6 +11,6 @@ public partial class DashboardCard : ComponentBase
 {
     public static string TextSize = $"{24}px";
 
-    [Parameter] public required Shared.DashboardCard CardData { get; set; }
+    [Parameter] public required Shared.Cards.DashboardCard CardData { get; set; }
     [Parameter] public RenderFragment? ChildContent { get; set; }
 }

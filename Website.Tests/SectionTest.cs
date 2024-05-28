@@ -36,7 +36,7 @@ public class SectionTest
         return new()
         {
             Name = "Sample Section",
-            Cards =
+            DashboardCards =
             {
                 new() { Title = "Card 1" },
                 new() { Title = "Card 2" },
@@ -50,7 +50,7 @@ public class SectionTest
     public void PeekLeft_ReturnsCardToLeft()
     {
         Section section = GetSampleSection();
-        Assert.Equal(section.Cards[0], section.PeekLeft());
+        Assert.Equal(section.DashboardCards[0], section.PeekLeft());
         Assert.Equal(1, section.SelectedCardIndex);
     }
 
@@ -58,7 +58,7 @@ public class SectionTest
     public void PeekRight_ReturnsCardToRight()
     {
         Section section = GetSampleSection();
-        Assert.Equal(section.Cards[^1], section.PeekRight());
+        Assert.Equal(section.DashboardCards[^1], section.PeekRight());
         Assert.Equal(1, section.SelectedCardIndex);
     }
 
@@ -67,7 +67,7 @@ public class SectionTest
     {
         Section section = GetSampleSection();
         section.Left();
-        Assert.Equal(section.Cards[0], section.SelectedCard);
+        Assert.Equal(section.DashboardCards[0], section.SelectedCard);
     }
 
     [Fact]
@@ -75,7 +75,7 @@ public class SectionTest
     {
         Section section = GetSampleSection();
         section.Right();
-        Assert.Equal(section.Cards[^1], section.SelectedCard);
+        Assert.Equal(section.DashboardCards[^1], section.SelectedCard);
     }
 
     [Fact]
@@ -83,7 +83,7 @@ public class SectionTest
     {
         Section section = GetSampleSection();
         section.Left();
-        Assert.Equal(section.Cards[0], section.Left());
+        Assert.Equal(section.DashboardCards[0], section.Left());
     }
 
     [Fact]
@@ -91,7 +91,7 @@ public class SectionTest
     {
         Section section = GetSampleSection();
         section.Right();
-        Assert.Equal(section.Cards[^1], section.Right());
+        Assert.Equal(section.DashboardCards[^1], section.Right());
     }
 
     [Fact]

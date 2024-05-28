@@ -42,6 +42,18 @@ public partial class Dashboard : ComponentBase
             case "ArrowRight":
                 DashboardData.SelectedSection?.Right();
                 break;
+            case "Enter":
+                if (DashboardData.SelectedSection != null && DashboardData.SelectedSection.SelectedCard != null)
+                {
+                    DashboardData.SelectedSection.SelectedCard.SelectedCardIndex = 0;
+                }
+                break;
+            case "Backspace":
+                if (DashboardData.SelectedSection != null && DashboardData.SelectedSection.SelectedCard != null)
+                {
+                    DashboardData.SelectedSection.SelectedCard.SelectedCardIndex = null;
+                }
+                break;
         }
 	}
 }
