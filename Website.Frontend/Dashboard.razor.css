@@ -1,14 +1,24 @@
 ﻿.background {
+    background: linear-gradient(limegreen, gray);
+    display: flex;
+    flex-flow: column;
+    height: 100%;
 }
 
 .content {
-    font-size: 32px;
-    margin-top: 2em;
-    margin-left: 2em;
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+    /*Choosing to make this padding instead of margin so you can click anywhere on the screen and it will still focus as expected*/
+    padding-top: 5%;
+    padding-left: 5%;
+    font-size: 2em;
 }
 
 .controls {
     color: white;
+    margin-top: auto;
+    margin-bottom: 5%;
 }
 
 .content:focus {

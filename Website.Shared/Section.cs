@@ -143,8 +143,8 @@ public static class SectionStatics
         DashboardCardAndStyle[] cardAndStyles = new DashboardCardAndStyle[inSection.DashboardCards.Count];
         for (int i = 0; i < cardAndStyles.Length; i++)
         {
-            // 600px is the size of the card and 30px is how much margin-right each card has
-            float xPosition = inSection.SelectedCardIndex * -(600f + 30f);
+            // 100% is the size of the card and 5% is how much margin-right each card has
+            float xPosition = inSection.SelectedCardIndex * -((1f + 0.05f) * 100);
             // After fiddling around with this, 1.55 seemed to be a pretty good number
             float zPosition = i + 1 > inSection.SelectedCardIndex ? -MathF.Pow(1.55f, i - inSection.SelectedCardIndex) : 20f;
             cardAndStyles[i] = new(inSection.DashboardCards[i], xPosition, zPosition, -i);

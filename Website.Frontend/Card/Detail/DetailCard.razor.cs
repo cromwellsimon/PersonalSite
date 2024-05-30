@@ -5,8 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Website.Shared.Cards.Detail;
+namespace Website.Frontend.Card.Detail;
 
-public interface IDetailCard
+public partial class DetailCard : ComponentBase
 {
+	[Parameter] public RenderFragment? ChildContent { get; set; }
 }

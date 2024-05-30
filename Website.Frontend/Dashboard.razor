@@ -2,7 +2,9 @@
 	<div class="content" @ref=contentDiv @onkeydown=OnInput tabindex="0">
 		@if (DashboardData.SelectedSection!.SelectedCard!.SelectedDetailCard != null)
 		{
-			@DashboardData.SelectedSection!.SelectedCard.SelectedDetailCard.RenderFragment
+			<DetailCard>
+				@DetailCardStatics.Render(DashboardData.SelectedSection!.SelectedCard.SelectedDetailCard)
+			</DetailCard>
 		}
 		else
 		{

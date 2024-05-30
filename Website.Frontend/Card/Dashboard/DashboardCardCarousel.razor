@@ -2,7 +2,7 @@
 	<div class="carousel">
 		@foreach (DashboardCardAndStyle cardAndStyle in Section.GetCardsToDisplay())
 		{
-			<div style="transform: translateX(@(cardAndStyle.XPosition)px) translateZ(@(cardAndStyle.ZPosition)em); z-index: @cardAndStyle.ZIndex; margin-right: 30px;" >
+			<div style="transform: translateX(@(cardAndStyle.XPosition)%) translateZ(@(cardAndStyle.ZPosition)em); z-index: @cardAndStyle.ZIndex; margin-right: 30px;" >
 				<DashboardCard CardData=@cardAndStyle.Card>
 
 				</DashboardCard>

@@ -3,7 +3,7 @@
 }
 
 .background {
-    border-radius: 30px;
+    border-radius: 5%;
     width: 600px;
     height: 500px;
     background: linear-gradient(greenyellow, limegreen);

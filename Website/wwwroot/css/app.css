@@ -1,6 +1,10 @@
 html, body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    background: radial-gradient(gray, dimgray);
+    height: 100%;
+}
+
+#app {
+    height: 100%;
 }
 
 h1:focus {

@@ -9,7 +9,6 @@ namespace Website.Shared.Cards.Detail;
 
 public class TextCard : IDetailCard
 {
-	public virtual RenderFragment? RenderFragment { get; }
 	public string Title { get; set; } = String.Empty;
 	public string Content { get; set; } = String.Empty;
 
