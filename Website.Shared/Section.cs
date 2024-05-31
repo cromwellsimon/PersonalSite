@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using Website.Shared.Cards;
+using Website.Shared.Cards.Dashboard;
 using static System.Collections.Specialized.BitVector32;
 
 namespace Website.Shared;
@@ -99,7 +101,7 @@ public static class SectionStatics
         }
     }
 
-    // This function won't actually be necessary for what I'm doing since I only need it my sections to ever go backwards
+    // This function won't actually be necessary for what I'm doing since I only need my sections to ever go backwards and my cards don't loop
     public static IEnumerable<T> Carousel<T>(this IList<T> inList, int inStartingPosition, int inBackwardPadding, int inForwardPadding)
     {
         foreach (T element in inList.Rotate(inStartingPosition, -1).Take(inBackwardPadding).Reverse())
@@ -115,10 +117,7 @@ public static class SectionStatics
         }
     }
 
-    public static string GetCountText(this Section inSection)
-    {
-        return $"{inSection.SelectedCardIndex + 1} of {inSection.DashboardCards.Count}";
-    }
+    public static string GetCountText(this Section inSection) => inSection.DashboardCards.GetCountText(inSection.SelectedCardIndex);
 
     public static DashboardCard? PeekLeft(this Section inSection)
     {
@@ -138,17 +137,9 @@ public static class SectionStatics
         return inSection.DashboardCards[Math.Clamp(inSection.SelectedCardIndex + 1, 0, inSection.DashboardCards.Count - 1)];
     }
 
-    public static DashboardCardAndStyle[] GetCardsToDisplay(this Section inSection)
+    public static IEnumerable<DashboardCardAndStyle> GetCardsToDisplay(this Section inSection)
     {
-        DashboardCardAndStyle[] cardAndStyles = new DashboardCardAndStyle[inSection.DashboardCards.Count];
-        for (int i = 0; i < cardAndStyles.Length; i++)
-        {
-            // 100% is the size of the card and 5% is how much margin-right each card has
-            float xPosition = inSection.SelectedCardIndex * -((1f + 0.05f) * 100);
-            // After fiddling around with this, 1.55 seemed to be a pretty good number
-            float zPosition = i + 1 > inSection.SelectedCardIndex ? -MathF.Pow(1.55f, i - inSection.SelectedCardIndex) : 20f;
-            cardAndStyles[i] = new(inSection.DashboardCards[i], xPosition, zPosition, -i);
-        }
-        return cardAndStyles;
+        return ICardStatics.GetCardsToDisplay(inSection.DashboardCards.Cast<ICard>().ToList(), inSection.SelectedCardIndex)
+            .Select((element) => new DashboardCardAndStyle((DashboardCard)element.Card, element.XPosition, element.ZPosition, element.ZIndex));
     }
 }

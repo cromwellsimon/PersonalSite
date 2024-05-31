@@ -1,0 +1,13 @@
+﻿<div class="content">
+	<div class="carousel">
+		@foreach (CardAndStyle cardAndStyle in DashboardCard.GetCardsToDisplay())
+		{
+			<div style="transform: translateX(@(cardAndStyle.XPosition)%) translateZ(@(cardAndStyle.ZPosition)em); z-index: @cardAndStyle.ZIndex; margin-right: 30px;">
+				<DetailCard>
+					@DetailCardStatics.Render((IDetailCard)cardAndStyle.Card)
+				</DetailCard>
+			</div>
+		}
+	</div>
+	<p class="count">@DashboardCard.GetCountText()</p>
+</div>

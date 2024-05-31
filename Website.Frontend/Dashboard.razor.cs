@@ -6,6 +6,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Website.Frontend.Card;
+using Website.Shared.Cards.Dashboard;
+using Website.Shared.Cards.Detail;
 
 namespace Website.Frontend;
 
@@ -28,30 +30,53 @@ public partial class Dashboard : ComponentBase
 	{
         Console.WriteLine(e.Key);
 
+        DashboardCard? selectedDashboardCard = DashboardData.SelectedSection?.SelectedCard;
+        IDetailCard? selectedDetailCard = selectedDashboardCard?.SelectedDetailCard;
+
         switch (e.Key)
         {
             case "ArrowUp":
-                DashboardData.Up();
+                if (selectedDetailCard == null)
+				{
+					DashboardData.Up();
+				}
                 break;
             case "ArrowDown":
-                DashboardData.Down();
+                if (selectedDetailCard == null)
+				{
+					DashboardData.Down();
+				}
                 break;
             case "ArrowLeft":
-                DashboardData.SelectedSection?.Left();
+                if (selectedDetailCard == null)
+				{
+					DashboardData.SelectedSection?.Left();
+				}
+                else
+                {
+                    selectedDashboardCard!.Left();
+                }
                 break;
             case "ArrowRight":
-                DashboardData.SelectedSection?.Right();
+                if (selectedDetailCard == null)
+				{
+					DashboardData.SelectedSection?.Right();
+				}
+                else
+                {
+                    selectedDashboardCard!.Right();
+                }
                 break;
             case "Enter":
-                if (DashboardData.SelectedSection != null && DashboardData.SelectedSection.SelectedCard != null)
+                if (selectedDashboardCard != null && selectedDetailCard == null)
                 {
-                    DashboardData.SelectedSection.SelectedCard.SelectedCardIndex = 0;
+                    selectedDashboardCard.SelectedCardIndex = 0;
                 }
                 break;
             case "Backspace":
-                if (DashboardData.SelectedSection != null && DashboardData.SelectedSection.SelectedCard != null)
+                if (selectedDashboardCard != null)
                 {
-                    DashboardData.SelectedSection.SelectedCard.SelectedCardIndex = null;
+                    selectedDashboardCard.SelectedCardIndex = null;
                 }
                 break;
         }

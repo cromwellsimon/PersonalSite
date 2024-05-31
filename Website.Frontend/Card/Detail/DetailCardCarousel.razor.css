@@ -1,0 +1,24 @@
+﻿.content {
+    height: 100%;
+}
+
+.carousel {
+    height: 90%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    white-space: nowrap;
+    perspective: 500px;
+    perspective-origin: left;
+}
+
+.section-test {
+    margin-top: 1em;
+    color: white;
+}
+
+.count {
+    color: lightgray;
+    font-size: 0.75em;
+}

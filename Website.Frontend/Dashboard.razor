@@ -2,9 +2,10 @@
 	<div class="content" @ref=contentDiv @onkeydown=OnInput tabindex="0">
 		@if (DashboardData.SelectedSection!.SelectedCard!.SelectedDetailCard != null)
 		{
-			<DetailCard>
+			<DetailCardCarousel DashboardCard=@(DashboardData.SelectedSection!.SelectedCard!) />
+			@*<DetailCard>
 				@DetailCardStatics.Render(DashboardData.SelectedSection!.SelectedCard.SelectedDetailCard)
-			</DetailCard>
+			</DetailCard>*@
 		}
 		else
 		{
@@ -18,7 +19,7 @@
 		}
 		<div class="controls">
 			<p> Arrow Keys: Navigate </p>
-			<p> Enter: Detail </p>
+			<p> Enter: Details </p>
 			<p>	Backspace: Return </p>
 		</div>
 	</div>

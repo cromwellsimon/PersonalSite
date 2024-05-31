@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Website.Shared.Cards.Detail;
 
-public class TextCard : IDetailCard
+public record TextCard : IDetailCard
 {
 	public string Title { get; set; } = String.Empty;
 	public string Content { get; set; } = String.Empty;

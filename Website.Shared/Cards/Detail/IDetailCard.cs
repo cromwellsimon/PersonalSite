@@ -7,6 +7,6 @@ using System.Threading.Tasks;
 
 namespace Website.Shared.Cards.Detail;
 
-public interface IDetailCard
+public interface IDetailCard : ICard
 {
 }
