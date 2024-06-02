@@ -15,15 +15,14 @@ public readonly record struct CardAndStyle(ICard Card, float XPosition, float ZP
 
 public static class ICardStatics
 {
-	public static IEnumerable<CardAndStyle> GetCardsToDisplay(this IEnumerable<ICard> inCards, int inSelectedCardIndex)
+	public static IEnumerable<CardAndStyle> GetCardsToDisplay(this IEnumerable<ICard> inCards, int inSelectedCardIndex, float inMargin = 0.05f)
 	{
 		int i = 0;
 		foreach (ICard card in inCards)
 		{
-			// 100% is the size of the card and 5% is how much margin-right each card has
-			float xPosition = inSelectedCardIndex * -((1f + 0.05f) * 100);
-			// After fiddling around with this, 1.55 seemed to be a pretty good number
-			float zPosition = i + 1 > inSelectedCardIndex ? -MathF.Pow(1.55f, i - inSelectedCardIndex) : 20f;
+			// 100% is the size of the card and inMargin is how much margin-right each card has
+			float xPosition = inSelectedCardIndex * -((1f + inMargin) * 100);
+			float zPosition = i + 1 > inSelectedCardIndex ? -((i - inSelectedCardIndex) * 2) : 20f;
 			yield return new(card, xPosition, zPosition, -i);
 			i++;
 		}

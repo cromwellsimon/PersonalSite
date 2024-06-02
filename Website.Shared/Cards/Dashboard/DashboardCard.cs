@@ -24,7 +24,7 @@ public record DashboardCard : ICard
     public int? SelectedCardIndex
     {
         get => selectedCardIndex;
-        set => selectedCardIndex = value.HasValue ? Math.Clamp(value.Value, 0, DetailCards.Count - 1) : null;
+        set => selectedCardIndex = value.HasValue && DetailCards.Count > 0 ? Math.Clamp(value.Value, 0, DetailCards.Count - 1) : null;
     }
     public IDetailCard? SelectedDetailCard
     {
@@ -115,7 +115,7 @@ public static class DashboardCardStatics
         {
             return Enumerable.Empty<CardAndStyle>();
         }
-        return ICardStatics.GetCardsToDisplay(inDashboardCard.DetailCards, inDashboardCard.SelectedCardIndex.Value);
+        return ICardStatics.GetCardsToDisplay(inDashboardCard.DetailCards, inDashboardCard.SelectedCardIndex.Value, 0.0375f);
 	}
 	public static string GetCountText(this DashboardCard inDashboardCard) => inDashboardCard.DetailCards.GetCountText(inDashboardCard.SelectedCardIndex!.Value);
 }

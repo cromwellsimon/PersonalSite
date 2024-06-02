@@ -7,73 +7,7 @@
         </Card>*@
         <Dashboard DashboardData=@(new()
             {
-                Sections =
-                {
-                    new()
-                    {
-                        Name = StringLibrary.Sections.Other,
-                        DashboardCards = 
-                        {
-                            new() { Title = "test" },
-                        }
-                    },
-                    new()
-                    {
-                        Name = StringLibrary.Sections.Courses,
-                        DashboardCards = 
-                        {
-                            new() { Title = StringLibrary.CourseSites.Pluralsight },
-                            new() { Title = StringLibrary.CourseSites.Udemy },
-                            new() { Title = StringLibrary.CourseSites.GameDevTv },
-                        }
-                    },
-                    new()
-                    {
-                        Name = StringLibrary.Sections.Projects,
-                        DashboardCards =
-                        {
-                            new() { Title = StringLibrary.Projects.PtForPc, Subtitle = StringLibrary.Companies.Independent },
-                            new() { Title = StringLibrary.Projects.LaRueCountyTreasuryWebsite, Subtitle = StringLibrary.Companies.Independent },
-                            new() { Title = StringLibrary.Projects.ElevatorUnity, Subtitle = StringLibrary.Companies.Independent },
-                            new() { Title = StringLibrary.Projects.PolkerGame, Subtitle = StringLibrary.Companies.Polker },
-                            new() { Title = StringLibrary.Projects.DarkDeception, Subtitle = StringLibrary.Companies.GlowstickEntertainment },
-                            new() { Title = StringLibrary.Projects.MonstersAndMortals, Subtitle = StringLibrary.Companies.GlowstickEntertainment },
-                            new() { Title = StringLibrary.Projects.GdSuite, Subtitle = StringLibrary.Companies.Independent },
-                            new() { Title = StringLibrary.Projects.CommissionSystem, Subtitle = StringLibrary.Companies.ElectricityGuruAndInternetGuru },
-                            new() { Title = StringLibrary.Projects.SilentHillRemake, Subtitle = StringLibrary.Companies.Independent },
-                            new() { Title = StringLibrary.Projects.UniversalControlMacros, Subtitle = StringLibrary.Companies.LaRueCountyBand },
-                            new() { Title = StringLibrary.Projects.CtCore, Subtitle = StringLibrary.Companies.CromwellTechnology },
-                            new() { Title = StringLibrary.Projects.CaravanPositioner, Subtitle = StringLibrary.Companies.Independent },
-                            new() { Title = StringLibrary.Projects.Website, Subtitle = StringLibrary.Companies.Independent },
-                        }
-                    },
-                    new() 
-                    {
-                        Name = StringLibrary.Sections.ProfessionalExperience,
-                        DashboardCards = 
-                        {
-                            new() { Title = StringLibrary.JobTitles.SoftwareEngineer, Subtitle = StringLibrary.Companies.GlowstickEntertainment },
-                            new() { Title = StringLibrary.JobTitles.FullStackDeveloper, Subtitle = StringLibrary.Companies.Polker },
-                            new() { Title = StringLibrary.JobTitles.FullStackDeveloper, Subtitle = StringLibrary.Companies.ElectricityGuruAndInternetGuru },
-                            new() { Title = StringLibrary.JobTitles.FullStackDeveloper, Subtitle = StringLibrary.Companies.CromwellTechnology },
-                        }
-                    },
-                    new()
-                    {
-                        Name = StringLibrary.Sections.Skills,
-                        DashboardCards = 
-                        {
-                            new() { Title = StringLibrary.SkillCategories.ProgrammingLanguages, DetailCards = { new TextCard("Hello", "World"), new TextCard("Another", "Hello"), new TextCard("Third", "Hello") } },
-                            new() { Title = StringLibrary.SkillCategories.GameDevelopmentTools },
-                            new() { Title = StringLibrary.SkillCategories.WebFrontend },
-                            new() { Title = StringLibrary.SkillCategories.Backend },
-                            new() { Title = StringLibrary.SkillCategories.Cloud },
-                            new() { Title = StringLibrary.SkillCategories.Database },
-                            new() { Title = StringLibrary.SkillCategories.DevOps },
-                            new() { Title = StringLibrary.SkillCategories.Other },
-                        }
-                    },
-                },
+                Sections = Data.Sections.SectionsData.Sections,
                 SelectedSectionIndex = 4,
             }) />
 @*    </Found>

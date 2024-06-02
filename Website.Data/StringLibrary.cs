@@ -8,15 +8,6 @@ namespace Website.Data;
 
 public static class StringLibrary
 {
-    public static class Sections
-    {
-        public const string Skills = nameof(Skills);
-        public const string ProfessionalExperience = "Professional Experience";
-        public const string Projects = nameof(Projects);
-        public const string Courses = nameof(Courses);
-        public const string Other = nameof(Other);
-    }
-
     public static class Companies
     {
         public const string Independent = nameof(Independent);
@@ -60,13 +51,5 @@ public static class StringLibrary
 
     public static class SkillCategories
     {
-        public const string ProgrammingLanguages = "Programming Languages";
-        public const string GameDevelopmentTools = "Game Development Tools";
-        public const string WebFrontend = "Web Frontend";
-        public const string Backend = nameof(Backend);
-        public const string Cloud = nameof(Cloud);
-        public const string Database = nameof(Database);
-        public const string DevOps = nameof(DevOps);
-        public const string Other = nameof(Other);
     }
 }

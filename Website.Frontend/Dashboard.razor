@@ -18,9 +18,19 @@
 			<DashboardCardCarousel Section=@DashboardData.SelectedSection />
 		}
 		<div class="controls">
+			@{
+				Shared.Cards.Dashboard.DashboardCard? selectedCard = DashboardData.SelectedSection?.SelectedCard;
+				if (selectedCard != null && selectedCard.SelectedDetailCard == null && selectedCard.DetailCards.Count > 0)
+				{
+					<p> Enter: Details </p>
+				}
+				if (selectedCard?.SelectedDetailCard != null)
+				{
+					<p>	Backspace: Return </p>
+					
+				}
+			}
 			<p> Arrow Keys: Navigate </p>
-			<p> Enter: Details </p>
-			<p>	Backspace: Return </p>
 		</div>
 	</div>
 </div>

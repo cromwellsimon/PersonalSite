@@ -23,6 +23,10 @@
 
 	public static RenderFragment Render(TextCard inTextCard)
 	{
-		return @<p> @inTextCard.Title + @inTextCard.Content </p>;
+		return
+		@<div>
+			<h1> @inTextCard.Title </h1>
+			<p> @inTextCard.Content </p>
+		</div>;
 	}
 }
