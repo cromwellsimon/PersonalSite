@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Immutable;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Website.Data.Sections.Skills;
 using Website.Shared;
 
 namespace Website.Data.Sections;
@@ -66,6 +66,6 @@ public static class SectionsData
                 new() { Title = StringLibrary.JobTitles.FullStackDeveloper, Subtitle = StringLibrary.Companies.CromwellTechnology },
             }
         },
-        SkillsSection.Skills,
+        SkillsSection.Data,
     };
 }

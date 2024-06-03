@@ -3,13 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Website.Data.Interfaces;
 using Website.Shared.Cards.Dashboard;
 using Website.Shared.Cards.Detail;
 
-namespace Website.Data.Sections.Skills.Details;
+namespace Website.Data.Sections.Skills;
 
-public static class ProgrammingLanguagesCards
+public sealed class ProgrammingLanguages : ISectionCard
 {
+    public static string Name { get; } = "Programming Languages";
+
     public const string Cs = "C#";
     public const string Cpp = "C++";
     public const string TypeScript = nameof(TypeScript);
@@ -20,7 +23,7 @@ public static class ProgrammingLanguagesCards
     public const string GdScript = "GDScript";
     public const string Lua = nameof(Lua);
 
-    public static DashboardCard ProgrammingLanguages { get; } = new(SkillsSection.ProgrammingLanguages)
+    public static DashboardCard Data { get; } = new(Name)
     {
         DetailCards = new()
         {

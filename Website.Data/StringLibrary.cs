@@ -48,8 +48,4 @@ public static class StringLibrary
         public const string Udemy = nameof(Udemy);
         public const string GameDevTv = "GameDev.tv";
     }
-
-    public static class SkillCategories
-    {
-    }
 }
