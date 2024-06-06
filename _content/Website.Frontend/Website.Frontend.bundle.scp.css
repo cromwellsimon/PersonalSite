@@ -1,0 +1,140 @@
+/* _content/Website.Frontend/Card/Dashboard/DashboardCard.razor.rz.scp.css */
+:root[b-osgmo720z0] {
+    --text-size: 24px;
+}
+
+.background[b-osgmo720z0] {
+    border-radius: 5%;
+    width: 600px;
+    height: 500px;
+    background: linear-gradient(greenyellow, limegreen);
+    box-shadow: 2.5px 2.5px 5px gray;
+}
+
+.content[b-osgmo720z0] {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    padding: 30px;
+}
+
+.child-content[b-osgmo720z0] {
+    margin-top: auto;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title[b-osgmo720z0] {
+    color: white;
+    margin-bottom: 0px;
+    white-space: normal;
+    word-wrap: break-word;
+}
+
+.subtitle[b-osgmo720z0] {
+    color: gray;
+    white-space: normal;
+}
+/* _content/Website.Frontend/Card/Dashboard/DashboardCardCarousel.razor.rz.scp.css */
+.content[b-20h7dm8mtt] {
+}
+
+.carousel[b-20h7dm8mtt] {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    white-space: nowrap;
+    perspective: 500px;
+    perspective-origin: left;
+}
+
+.section-test[b-20h7dm8mtt] {
+    margin-top: 1em;
+    color: white;
+}
+
+.count[b-20h7dm8mtt] {
+    color: lightgray;
+    font-size: 0.75em;
+}
+/* _content/Website.Frontend/Card/Detail/DetailCard.razor.rz.scp.css */
+:root[b-7egqk65m9k] {
+    --text-size: 24px;
+}
+
+.background[b-7egqk65m9k] {
+    border-radius: 30px;
+    height: 100%;
+    width: 800px;
+    background: gray;
+    box-shadow: 2.5px 2.5px 5px dimgray;
+}
+
+.content[b-7egqk65m9k] {
+    width: 100%;
+    height: 100%;
+    padding: 30px;
+    white-space: normal;
+    word-wrap: break-word;
+}
+/* _content/Website.Frontend/Card/Detail/DetailCardCarousel.razor.rz.scp.css */
+.content[b-twh42x0664] {
+    height: 100%;
+}
+
+.carousel[b-twh42x0664] {
+    height: 90%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    white-space: nowrap;
+    perspective: 500px;
+    perspective-origin: left;
+}
+
+.section-test[b-twh42x0664] {
+    margin-top: 1em;
+    color: white;
+}
+
+.count[b-twh42x0664] {
+    color: lightgray;
+    font-size: 0.75em;
+}
+/* _content/Website.Frontend/Dashboard.razor.rz.scp.css */
+.background[b-b5kv4hrlma] {
+    background: linear-gradient(limegreen, gray);
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+}
+
+.content[b-b5kv4hrlma] {
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+    /*Choosing to make this padding instead of margin so you can click anywhere on the screen and it will still focus as expected*/
+    padding-top: 5%;
+    padding-left: 5%;
+    font-size: 2em;
+}
+
+.controls[b-b5kv4hrlma] {
+    color: white;
+    margin-top: auto;
+    margin-bottom: 5%;
+}
+
+.content:focus[b-b5kv4hrlma] {
+    outline: none;
+}
+
+.section-name[b-b5kv4hrlma] {
+    color: white;
+}
