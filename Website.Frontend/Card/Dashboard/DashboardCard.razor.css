@@ -30,8 +30,11 @@
 .title {
     color: white;
     margin-bottom: 0px;
+    white-space: normal;
+    word-wrap: break-word;
 }
 
 .subtitle {
     color: gray;
+    white-space: normal;
 }

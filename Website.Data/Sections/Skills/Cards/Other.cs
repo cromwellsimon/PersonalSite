@@ -26,14 +26,14 @@ public sealed class Other : ISectionCard
     {
         DetailCards = new()
         {
-            new TextCard() { Title = Modeling },
-            new TextCard() { Title = ProceduralTexturing },
-            new TextCard() { Title = UvUnwrapping },
-            new TextCard() { Title = Lighting },
-            new TextCard() { Title = Glsl },
-            new TextCard() { Title = Vfx },
-            new TextCard() { Title = Vr },
-            new TextCard() { Title = Mobile },
+            new TitleContentCard() { Title = Modeling },
+            new TitleContentCard() { Title = ProceduralTexturing },
+            new TitleContentCard() { Title = UvUnwrapping },
+            new TitleContentCard() { Title = Lighting },
+            new TitleContentCard() { Title = Glsl },
+            new TitleContentCard() { Title = Vfx },
+            new TitleContentCard() { Title = Vr },
+            new TitleContentCard() { Title = Mobile },
         }
     };
 }

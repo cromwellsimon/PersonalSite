@@ -22,10 +22,10 @@ public sealed class Cloud : ISectionCard
     {
         DetailCards = new()
         {
-            new TextCard() { Title = Aws },
-            new TextCard() { Title = Azure },
-            new TextCard() { Title = Eos },
-            new TextCard() { Title = Steamworks },
+            new TitleContentCard() { Title = Aws },
+            new TitleContentCard() { Title = Azure },
+            new TitleContentCard() { Title = Eos },
+            new TitleContentCard() { Title = Steamworks },
         }
     };
 }

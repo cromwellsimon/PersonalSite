@@ -15,6 +15,7 @@ public sealed class CromwellTechnology : ISectionCard
     public static DashboardCard Data { get; } = new()
     {
         Title = Name,
+        Subtitle = "Full-stack C# Developer, 2022 - present",
         DetailCards = new()
         {
 

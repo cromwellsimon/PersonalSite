@@ -8,14 +8,14 @@ using Website.Shared.Cards.Dashboard;
 
 namespace Website.Data.Sections.ProfessionalExperience;
 
-public sealed class ElectricityGuruAndInternetGuru : ISectionCard
+public sealed class Independent : ISectionCard
 {
-    public static string Name { get; } = "Electricity Guru and Internet Guru";
+    public static string Name { get; } = nameof(Independent);
 
     public static DashboardCard Data { get; } = new()
     {
         Title = Name,
-        Subtitle = "Full-stack C# Developer, 2022 - 2023",
+        Subtitle = "2016 - present",
         DetailCards = new()
         {
 

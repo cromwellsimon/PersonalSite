@@ -23,11 +23,11 @@ public sealed class GameDevelopment : ISectionCard
     {
         DetailCards = new()
         {
-            new TextCard() { Title = Unreal },
-            new TextCard() { Title = Unity },
-            new TextCard() { Title = Godot },
-            new TextCard() { Title = Stride },
-            new TextCard() { Title = Blender },
+            new TitleContentCard() { Title = Unreal },
+            new TitleContentCard() { Title = Unity },
+            new TitleContentCard() { Title = Godot },
+            new TitleContentCard() { Title = Stride },
+            new TitleContentCard() { Title = Blender },
         }
     };
 }

@@ -31,19 +31,19 @@ public sealed class DevOps : ISectionCard
     {
         DetailCards = new()
         {
-            new TextCard() { Title = Git },
-            new TextCard() { Title = GitHub },
-            new TextCard() { Title = PlasticScm },
-            new TextCard() { Title = Slack },
-            new TextCard() { Title = Teams },
-            new TextCard() { Title = GitHubActions },
-            new TextCard() { Title = Jenkins },
-            new TextCard() { Title = AzureDevOps },
-            new TextCard() { Title = Jira },
-            new TextCard() { Title = Trello },
-            new TextCard() { Title = Confluence },
-            new TextCard() { Title = Terraform },
-            new TextCard() { Title = XUnit },
+            new TitleContentCard() { Title = Git },
+            new TitleContentCard() { Title = GitHub },
+            new TitleContentCard() { Title = PlasticScm },
+            new TitleContentCard() { Title = Slack },
+            new TitleContentCard() { Title = Teams },
+            new TitleContentCard() { Title = GitHubActions },
+            new TitleContentCard() { Title = Jenkins },
+            new TitleContentCard() { Title = AzureDevOps },
+            new TitleContentCard() { Title = Jira },
+            new TitleContentCard() { Title = Trello },
+            new TitleContentCard() { Title = Confluence },
+            new TitleContentCard() { Title = Terraform },
+            new TitleContentCard() { Title = XUnit },
         }
     };
 }

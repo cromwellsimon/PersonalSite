@@ -23,11 +23,11 @@ public sealed class Database : ISectionCard
     {
         DetailCards = new()
         {
-            new TextCard() { Title = SqlServer },
-            new TextCard() { Title = AzureSql },
-            new TextCard() { Title = MySql },
-            new TextCard() { Title = CosmosDb },
-            new TextCard() { Title = MongoDb },
+            new TitleContentCard() { Title = SqlServer },
+            new TitleContentCard() { Title = AzureSql },
+            new TitleContentCard() { Title = MySql },
+            new TitleContentCard() { Title = CosmosDb },
+            new TitleContentCard() { Title = MongoDb },
         }
     };
 }

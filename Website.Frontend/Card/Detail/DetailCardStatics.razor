@@ -21,12 +21,20 @@
 	// 	_ => null
 	// };
 
+	public static RenderFragment Render(TitleContentCard inTitleContentCard)
+	{
+		return
+		@<div>
+			<h1> @inTitleContentCard.Title </h1>
+			<p> @inTitleContentCard.Content </p>
+		</div>;
+	}
+
 	public static RenderFragment Render(TextCard inTextCard)
 	{
 		return
 		@<div>
-			<h1> @inTextCard.Title </h1>
-			<p> @inTextCard.Content </p>
+			<p> @inTextCard.Text </p>
 		</div>;
 	}
 }

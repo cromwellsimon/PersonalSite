@@ -15,6 +15,7 @@ public sealed class Polker : ISectionCard
     public static DashboardCard Data { get; } = new()
     {
         Title = Name,
+        Subtitle = "Full-stack Developer, 2021 - 2022",
         DetailCards = new()
         {
 

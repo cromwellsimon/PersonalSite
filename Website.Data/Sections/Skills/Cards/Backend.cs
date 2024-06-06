@@ -22,10 +22,26 @@ public sealed class Backend : ISectionCard
     {
         DetailCards = new()
         {
-            new TextCard() { Title = AspNetCore },
-            new TextCard() { Title = NetCore },
-            new TextCard() { Title = NodeJs },
-            new TextCard() { Title = Sql },
+            new TitleContentCard()
+            {
+                Title = AspNetCore,
+                Content = "Microsoft's web development framework primarily for C# and .NET developers",
+            },
+            new TitleContentCard()
+            {
+                Title = NetCore,
+                Content = "Microsoft's multi-platform runtime environment for languages such as C#, F#, and Visual Basic",
+            },
+            new TitleContentCard()
+            {
+                Title = NodeJs,
+                Content = "Standalone V8 engine wrapper designed to allow JavaScript run without a browser and with access to OS-level functionality such as the file system",
+            },
+            new TitleContentCard()
+            {
+                Title = Sql,
+                Content = "Data query language used in relational databases including SQL Server and MySQL",
+            },
         }
     };
 }

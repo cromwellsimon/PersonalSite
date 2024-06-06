@@ -24,12 +24,12 @@ public sealed class WebFrontend : ISectionCard
     {
         DetailCards = new()
         {
-            new TextCard() { Title = Html },
-            new TextCard() { Title = Css },
-            new TextCard() { Title = ReactJs },
-            new TextCard() { Title = Razor },
-            new TextCard() { Title = Blazor },
-            new TextCard() { Title = Bootstrap },
+            new TitleContentCard() { Title = Html },
+            new TitleContentCard() { Title = Css },
+            new TitleContentCard() { Title = ReactJs },
+            new TitleContentCard() { Title = Razor },
+            new TitleContentCard() { Title = Blazor },
+            new TitleContentCard() { Title = Bootstrap },
         }
     };
 }

@@ -15,6 +15,7 @@ public sealed class GlowstickEntertainment : ISectionCard
     public static DashboardCard Data { get; } = new()
     {
         Title = Name,
+        Subtitle = "Software Engineer, 2021 - 2022",
         DetailCards = new()
         {
 

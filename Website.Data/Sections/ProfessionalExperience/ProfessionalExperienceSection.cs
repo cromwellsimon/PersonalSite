@@ -14,12 +14,13 @@ public sealed class ProfessionalExperienceSection : ISectionData
     public static Section Data { get; } = new()
     {
         Name = "Professional Experience",
-        DashboardCards = new()
+        DashboardCards =
         {
             CromwellTechnology.Data,
             ElectricityGuruAndInternetGuru.Data,
             GlowstickEntertainment.Data,
             Polker.Data,
+            Independent.Data,
         },
     };
 }

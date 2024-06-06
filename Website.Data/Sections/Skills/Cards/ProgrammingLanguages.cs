@@ -27,15 +27,15 @@ public sealed class ProgrammingLanguages : ISectionCard
     {
         DetailCards = new()
         {
-            new TextCard() { Title = Cs },
-            new TextCard() { Title = Cpp },
-            new TextCard() { Title = TypeScript },
-            new TextCard() { Title = JavaScript },
-            new TextCard() { Title = Python },
-            new TextCard() { Title = Java },
-            new TextCard() { Title = UnrealBlueprint },
-            new TextCard() { Title = GdScript },
-            new TextCard() { Title = Lua },
+            new TitleContentCard() { Title = Cs },
+            new TitleContentCard() { Title = Cpp },
+            new TitleContentCard() { Title = TypeScript },
+            new TitleContentCard() { Title = JavaScript },
+            new TitleContentCard() { Title = Python },
+            new TitleContentCard() { Title = Java },
+            new TitleContentCard() { Title = UnrealBlueprint },
+            new TitleContentCard() { Title = GdScript },
+            new TitleContentCard() { Title = Lua },
         }
     };
 }

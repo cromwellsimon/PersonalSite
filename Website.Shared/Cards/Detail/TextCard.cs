@@ -9,14 +9,12 @@ namespace Website.Shared.Cards.Detail;
 
 public record TextCard : IDetailCard
 {
-	public string Title { get; set; } = String.Empty;
-	public string Content { get; set; } = String.Empty;
+	public string Text { get; set; } = String.Empty;
 
 	public TextCard() { }
 
-	public TextCard(string inTitle, string inContent)
+	public TextCard(string inText)
 	{
-		Title = inTitle;
-		Content = inContent;
+		Text = inText;
 	}
 }

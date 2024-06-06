@@ -14,8 +14,8 @@ public static class ReflectionStatics
 	/// <summary>
 	/// This may look bizarre but the reason for this is because unlike with virtual methods which redirect the function call at run-time,
 	/// method overloads redirect the function call at compile-time.
-	/// For instance, if I have a <see cref="List{T}"/> of <see cref="IDetailCard"/> and I try calling my Render static method on it but there is an overload for a <see cref="TextCard"/>,
-	/// the version for the <see cref="TextCard"/> will never be called unless if I specifically casted to it because the decision on what function to call is made at compile-time. That's what this function is for.
+	/// For instance, if I have a <see cref="List{T}"/> of <see cref="IDetailCard"/> and I try calling my Render static method on it but there is an overload for a <see cref="TitleContentCard"/>,
+	/// the version for the <see cref="TitleContentCard"/> will never be called unless if I specifically casted to it because the decision on what function to call is made at compile-time. That's what this function is for.
 	/// </summary>
 	/// <param name="inStaticType"> The place that your extension methods are held. You probably want to use <see cref="typeof()"/> for this </param>
 	/// <param name="inObjectType"> 
